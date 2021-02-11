@@ -1,15 +1,10 @@
-from mycroft import MycroftSkill, intent_file_handler
+from mycroft.skills.common_query_skill import CommonQuerySkill, CQSMatchLevel
 
-
-class ProgrammingSupport(MycroftSkill):
-    def __init__(self):
-        MycroftSkill.__init__(self)
-
-    @intent_file_handler('support.programming.intent')
-    def handle_support_programming(self, message):
-        self.speak_dialog('support.programming')
-
+class ProgrammingSupport(CommonQuerySkill):
+    def CQS_match_query_phrase(self, utt):
+       # Parsing implementation
+       # [...]
+       return (utt, CQSMatchLevel.LEVEL, 'answer_string')
 
 def create_skill():
     return ProgrammingSupport()
-
