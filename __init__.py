@@ -38,7 +38,7 @@ class ProgrammingSupport(CommonQuerySkill):
                     return None
                 else:
                     # gets and outputs the resource to the user
-                    get_output(resource_)
+                    get_output(resource_.link)
                     return utt, CQSMatchLevel.LEVEL, 'Support found, see your web browser'
         else:
             self.speak("Please Repeat that")

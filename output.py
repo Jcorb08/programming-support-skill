@@ -1,5 +1,6 @@
-from resource import GetResource
-
 class Output:
-    def __init__(self,resource):
-        self.url = resource
+    def __init__(self, link):
+        self.url = link
+
+    def output_url(self):
+        self.url = ""
