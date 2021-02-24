@@ -18,6 +18,7 @@ class WorkoutAction:
         resources = ["stack", "wiki", "docs", "api"]
         scores = []
         for resource in resources:
+
             # json(resource) is to a list of words for stack wiki etc.
             # add json with these phrases (2/3 for proof of concept)
             scores.append(match_one(self.words, resource))
