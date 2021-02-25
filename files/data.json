@@ -584,9 +584,9 @@
 "you've",
 "z"],
   "resources": {
-    "stack": [],
-    "wiki": ["python history",""],
-    "docs": [],
-    "api": []
+    "stack": ["syntax error python"],
+    "wiki": ["python history","class diagram"],
+    "docs": ["object class"],
+    "api": ["if statement java"]
   }
 }
