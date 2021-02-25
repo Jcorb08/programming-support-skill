@@ -15,7 +15,8 @@ class WorkoutAction:
 
     def score_likelihood(self):
         self.words = ""
-        resources = ["stack", "wiki", "docs", "api"]
+        resources = ""
+        # get from json
         scores = []
         for resource in resources:
 
