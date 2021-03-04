@@ -32,7 +32,7 @@ class ProgrammingSupport(CommonQuerySkill):
                 return None
             else:
                 # gets the resource based on action
-                resource_ = get_resource(action_)
+                resource_ = get_resource(action_.resource, action_.words)
                 if resource_.link == "":
                     self.speak("Cannot find Resource")
                     return None
