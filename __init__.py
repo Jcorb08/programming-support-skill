@@ -1,4 +1,3 @@
-import action
 from mycroft.skills.common_query_skill import CommonQuerySkill, CQSMatchLevel
 from .action import WorkoutAction
 from .resource import GetResource
