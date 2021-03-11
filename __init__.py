@@ -1,19 +1,20 @@
-from mycroft.skills.common_query_skill import CommonQuerySkill, CQSMatchLevel
 import action
-import resource
-import output
+from mycroft.skills.common_query_skill import CommonQuerySkill, CQSMatchLevel
+from .action import WorkoutAction
+from .resource import GetResource
+from .output import Output
 
 
 def get_action(utterance):
-    return action.WorkoutAction(utterance.lower())
+    return WorkoutAction(utterance.lower())
 
 
 def get_resource(workout_action):
-    return resource.GetResource(workout_action)
+    return GetResource(workout_action)
 
 
 def get_output(resource_):
-    return output.Output(resource_)
+    return Output(resource_)
 
 
 class ProgrammingSupport(CommonQuerySkill):
