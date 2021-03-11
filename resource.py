@@ -1,4 +1,4 @@
-from files.duckduckgo import search
+from .files.duckduckgo import search
 
 
 class GetResource:
