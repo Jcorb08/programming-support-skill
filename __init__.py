@@ -1,28 +1,26 @@
 from mycroft.skills.common_query_skill import CommonQuerySkill, CQSMatchLevel
-from action import WorkoutAction
-from resource import GetResource
-from output import Output
+import action
+import resource
+import output
 
 
 def get_action(utterance):
-    return WorkoutAction(utterance.lower())
+    return action.WorkoutAction(utterance.lower())
 
 
 def get_resource(workout_action):
-    return GetResource(workout_action)
+    return resource.GetResource(workout_action)
 
 
 def get_output(resource_):
-    return Output(resource_)
+    return output.Output(resource_)
 
 
 class ProgrammingSupport(CommonQuerySkill):
 
-
     def __init__(self):
         super(ProgrammingSupport, self).__init__()
-        self.speak("Programming Support starting up")
-
+        self.log("Programming Support starting up")
 
     def CQS_match_query_phrase(self, utt):
         # utt: the question
