@@ -7,7 +7,7 @@
     <content url="file://$USER_HOME$/mycroft-core">
       <sourceFolder url="file://$USER_HOME$/mycroft-core" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (Skill)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
