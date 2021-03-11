@@ -19,6 +19,13 @@ def get_output(resource_):
 
 
 class ProgrammingSupport(CommonQuerySkill):
+
+
+    def __init__(self):
+        super(ProgrammingSupport, self).__init__()
+        self.speak("Programming Support starting up")
+
+
     def CQS_match_query_phrase(self, utt):
         # utt: the question
 
