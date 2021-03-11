@@ -38,7 +38,7 @@ class WorkoutAction:
             return "ddg"
 
     def select_most_likely(self):
-        in_file = open('/files/data.json', 'r')
+        in_file = open('data.json', 'r')
         # dict with all non keywords and key phrases
         word_dict = json.load(in_file)
         self.get_keywords(word_dict)
