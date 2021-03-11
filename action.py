@@ -1,13 +1,14 @@
-from mycroft.util.parse import normalize
-from mycroft.util.parse import match_one
+from mycroft.util.parse import normalize, match_one
+from mycroft import MycroftSkill
 import json
 
 
 class WorkoutAction:
-    def __init__(self, utterance):
+    def __init__(self, utterance, data):
         self.resource = ""
         self.words = utterance
         self.select_most_likely()
+        self.word_dict = data
 
     def get_keywords(self, word_dict):
         self.words = normalize(self.words)
@@ -38,9 +39,6 @@ class WorkoutAction:
             return "ddg"
 
     def select_most_likely(self):
-        in_file = open('data.json', 'r')
-        # dict with all non keywords and key phrases
-        word_dict = json.load(in_file)
-        self.get_keywords(word_dict)
-        self.resource = self.determine_resource(word_dict)
+        self.get_keywords(self.word_dict)
+        self.resource = self.determine_resource(self.word_dict)
         self.words = self.words.replace(' ', '+')
