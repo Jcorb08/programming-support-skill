@@ -29,7 +29,7 @@ class WorkoutAction:
         return scores
 
     def determine_resource(self):
-        scores = self.score_likelihood(self.word_dict)
+        scores = self.score_likelihood()
         best_choice = max([score[2] for score in scores])
         if best_choice > .5:
             for score in scores:
@@ -40,5 +40,5 @@ class WorkoutAction:
 
     def select_most_likely(self):
         self.get_keywords()
-        self.resource = self.determine_resource(self.word_dict)
+        self.resource = self.determine_resource()
         self.words = self.words.replace(' ', '+')
