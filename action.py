@@ -36,7 +36,7 @@ class WorkoutAction:
         best_choice = max([score[1][1] for score in scores])
         if best_choice > .5:
             for score in scores:
-                if score[2] == best_choice:
+                if score[1][1] == best_choice:
                     return score[0]
         else:
             return "ddg"
