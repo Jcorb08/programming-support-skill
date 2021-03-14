@@ -4,8 +4,12 @@ import json
 
 
 class WorkoutAction:
+
+    resource = ""
+    words = ""
+    word_dict = ""
+
     def __init__(self, utterance, data):
-        self.resource = ""
         self.words = utterance
         self.select_most_likely()
         self.word_dict = data
