@@ -23,8 +23,9 @@ class ProgrammingSupport(CommonQuerySkill):
     def __init__(self):
         super(ProgrammingSupport, self).__init__()
         data_file = self.file_system.open("data.json", "r")
-        LOG.debug(data_file)
+        LOG.debug('', data_file)
         self.word_dict = json.load(data_file)
+        LOG.debug('', self.word_dict)
 
     def CQS_match_query_phrase(self, utt):
         # utt: the question
