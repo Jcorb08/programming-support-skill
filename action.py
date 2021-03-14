@@ -10,7 +10,7 @@ class WorkoutAction:
         self.select_most_likely()
         self.word_dict = data
 
-    def get_keywords(self, word_dict):
+    def get_keywords(self):
         self.words = normalize(self.words)
         # then get rid of pronouns verbs propositions ....
 
@@ -39,6 +39,6 @@ class WorkoutAction:
             return "ddg"
 
     def select_most_likely(self):
-        self.get_keywords(self.word_dict)
+        self.get_keywords()
         self.resource = self.determine_resource(self.word_dict)
         self.words = self.words.replace(' ', '+')
