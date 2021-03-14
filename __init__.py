@@ -27,7 +27,8 @@ class ProgrammingSupport(CommonQuerySkill):
         # utt: the question
         data_file = self.file_system.open("data.json", "r")
         word_dict = json.load(data_file)
-        LOG.error(word_dict)
+        # logger = LOG.__init__()
+        LOG.debug(word_dict, "word_dict", exc_info=1)
         # ensures question is for the support skill
         # checks programming.voc for specific utterance word
         # i.e. "programming" "java" etc.
