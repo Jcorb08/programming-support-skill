@@ -18,12 +18,9 @@ def get_output(resource_):
 
 
 class ProgrammingSupport(CommonQuerySkill):
-    word_dict = None
 
     def __init__(self):
         super(ProgrammingSupport, self).__init__()
-
-    def initialize(self):
         data_file = self.file_system.open("data.json", "r")
         self.word_dict = json.load(data_file)
 
