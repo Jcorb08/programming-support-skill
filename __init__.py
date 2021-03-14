@@ -1,4 +1,5 @@
 from mycroft.skills.common_query_skill import CommonQuerySkill, CQSMatchLevel
+from mycroft.util.log import LOG
 from .action import WorkoutAction
 from .resource import GetResource
 from .output import Output
@@ -22,7 +23,7 @@ class ProgrammingSupport(CommonQuerySkill):
     def __init__(self):
         super(ProgrammingSupport, self).__init__()
         data_file = self.file_system.open("data.json", "r")
-        self.log(data_file)
+        LOG.debug(data_file)
         self.word_dict = json.load(data_file)
 
     def CQS_match_query_phrase(self, utt):
