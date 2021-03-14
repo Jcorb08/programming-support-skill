@@ -22,20 +22,17 @@ class ProgrammingSupport(CommonQuerySkill):
 
     def __init__(self):
         super(ProgrammingSupport, self).__init__()
-        data_file = self.file_system.open("data.json", "r")
-        LOG.debug('', data_file)
-        self.word_dict = json.load(data_file)
-        LOG.debug('', self.word_dict)
 
     def CQS_match_query_phrase(self, utt):
         # utt: the question
-
+        data_file = self.file_system.open("data.json", "r")
+        word_dict = json.load(data_file)
         # ensures question is for the support skill
         # checks programming.voc for specific utterance word
         # i.e. "programming" "java" etc.
         if self.voc_match(utt, 'programming'):
             # gets an action based on utterance
-            action_ = get_action(utt, self.word_dict)
+            action_ = get_action(utt, word_dict)
             # if can't find an action
             if action_.resource == 0:
                 self.speak("Cannot find action")
