@@ -27,13 +27,13 @@ class WorkoutAction:
         for resource in resources:
             # json(resource) is to a list of words for stack wiki etc.
             # add json with these phrases (2/3 for proof of concept)
-            scores += [resource, list(match_one(self.words, resources[resource]))]
+            scores += [[resource, list(match_one(self.words, resources[resource]))]]
         return scores
 
     def determine_resource(self, word_dict):
         scores = self.score_likelihood(word_dict)
         LOG.debug(scores, "scores")
-        best_choice = max([score[2] for score in scores])
+        best_choice = max([score[2][2] for score in scores])
         if best_choice > .5:
             for score in scores:
                 if score[2] == best_choice:
