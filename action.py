@@ -1,5 +1,5 @@
 from mycroft.util.parse import normalize, match_one
-from mycroft import MycroftSkill
+from mycroft.util.log import LOG
 import json
 
 
@@ -22,6 +22,7 @@ class WorkoutAction:
 
     def score_likelihood(self, word_dict):
         resources = word_dict["resources"]
+        LOG.debug(resources, "resources")
         # get from json
         scores = []
         for resource in resources:
