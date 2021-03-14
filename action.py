@@ -22,7 +22,6 @@ class WorkoutAction:
 
     def score_likelihood(self, word_dict):
         resources = word_dict["resources"]
-        LOG.debug(resources, "resources")
         # get from json
         scores = []
         for resource in resources:
@@ -33,6 +32,7 @@ class WorkoutAction:
 
     def determine_resource(self, word_dict):
         scores = self.score_likelihood(word_dict)
+        LOG.debug(scores, "scores")
         best_choice = max([score[2] for score in scores])
         if best_choice > .5:
             for score in scores:
