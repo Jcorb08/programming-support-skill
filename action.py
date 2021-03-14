@@ -18,8 +18,8 @@ class WorkoutAction:
         # not_keywords = word_dict["non_key"]
         # self.words = [x for x in self.words if x != not_keywords]
 
-    def score_likelihood(self, word_dict):
-        resources = word_dict["resources"]
+    def score_likelihood(self):
+        resources = self.word_dict["resources"]
         # get from json
         scores = []
         for resource in resources:
@@ -28,8 +28,8 @@ class WorkoutAction:
             scores += [resource, list(match_one(self.words, resources[resource]))]
         return scores
 
-    def determine_resource(self, word_dict):
-        scores = self.score_likelihood(word_dict)
+    def determine_resource(self):
+        scores = self.score_likelihood(self.word_dict)
         best_choice = max([score[2] for score in scores])
         if best_choice > .5:
             for score in scores:
