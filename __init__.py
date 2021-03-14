@@ -38,18 +38,19 @@ class ProgrammingSupport(CommonQuerySkill):
             action_ = get_action(utt, self.word_dict)
             # if can't find an action
             if action_.resource == 0:
-                self.speak("Cannot find action")
-                return None
+                return utt, CQSMatchLevel.GENERAL, 'Cannot find Action'
             else:
                 # gets the resource based on action
                 resource_ = get_resource(action_.resource, action_.words)
                 if resource_.link == "":
-                    self.speak("Cannot find Resource")
-                    return None
+                    return utt, CQSMatchLevel.CATEGORY, 'Cannot find Resource'
                 else:
                     # gets and outputs the resource to the user
                     get_output(resource_.link)
-                    return utt, CQSMatchLevel.LEVEL, 'Support found, see your web browser'
+                    # EXACT = 1  # Skill could find a specific answer for the question
+                    # CATEGORY = 2  # Skill could find an answer from a category in the query
+                    # GENERAL = 3  # The query could be processed as a general quer
+                    return utt, CQSMatchLevel.EXACT, 'Support found, see your web browser'
         else:
             self.speak("Please Repeat that")
             return None

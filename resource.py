@@ -1,4 +1,5 @@
 from .duckduckgo import search
+from mycroft.util.log import LOG
 
 
 class GetResource:
