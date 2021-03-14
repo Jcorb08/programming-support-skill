@@ -7,12 +7,10 @@ class WorkoutAction:
 
     resource = ""
     words = ""
-    word_dict = None
 
-    def __init__(self, utterance, data):
+    def __init__(self, utterance, word_dict):
         self.words = utterance
-        self.select_most_likely()
-        self.word_dict = data
+        self.select_most_likely(word_dict)
 
     def get_keywords(self):
         self.words = normalize(self.words)
@@ -22,8 +20,8 @@ class WorkoutAction:
         # not_keywords = word_dict["non_key"]
         # self.words = [x for x in self.words if x != not_keywords]
 
-    def score_likelihood(self):
-        resources = self.word_dict["resources"]
+    def score_likelihood(self, word_dict):
+        resources = word_dict["resources"]
         # get from json
         scores = []
         for resource in resources:
@@ -32,8 +30,8 @@ class WorkoutAction:
             scores += [resource, list(match_one(self.words, resources[resource]))]
         return scores
 
-    def determine_resource(self):
-        scores = self.score_likelihood()
+    def determine_resource(self, word_dict):
+        scores = self.score_likelihood(word_dict)
         best_choice = max([score[2] for score in scores])
         if best_choice > .5:
             for score in scores:
@@ -42,7 +40,7 @@ class WorkoutAction:
         else:
             return "ddg"
 
-    def select_most_likely(self):
+    def select_most_likely(self, word_dict):
         self.get_keywords()
-        self.resource = self.determine_resource()
+        self.resource = self.determine_resource(word_dict)
         self.words = self.words.replace(' ', '+')
