@@ -10,8 +10,8 @@ def get_action(utterance, data):
     return WorkoutAction(utterance.lower(), data)
 
 
-def get_resource(workout_action):
-    return GetResource(workout_action)
+def get_resource(resource_, words):
+    return GetResource(resource_, words)
 
 
 def get_output(resource_):
