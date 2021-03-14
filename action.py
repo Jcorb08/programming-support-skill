@@ -7,7 +7,7 @@ class WorkoutAction:
 
     resource = ""
     words = ""
-    word_dict = dict()
+    #word_dict = dict()
 
     def __init__(self, utterance, data):
         self.words = utterance
