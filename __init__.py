@@ -46,6 +46,7 @@ class ProgrammingSupport(CommonQuerySkill):
                     return utt, CQSMatchLevel.CATEGORY, 'Cannot find Resource'
                 else:
                     # gets and outputs the resource to the user
+                    LOG.debug(resource_.link, "link")
                     get_output(resource_.link)
                     # EXACT = 1  # Skill could find a specific answer for the question
                     # CATEGORY = 2  # Skill could find an answer from a category in the query
