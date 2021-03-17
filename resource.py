@@ -33,9 +33,12 @@ class GetResource:
     def get_docs(self):
         # !bangs - not python !java11 good test?
         # searches ddg pick top
-        search_term = "!java11 " + (self.input_words.removesuffix('java'))
+        search_term = "!java11 " + (self.input_words.removesuffix('+java'))
         LOG.debug(search_term, "searchterm")
-        self.link = next(search(search_term, 1))
+        try:
+            self.link = next(search(search_term, 1))
+        except StopIteration:
+            pass
 
     def get_api(self):
         # search database
