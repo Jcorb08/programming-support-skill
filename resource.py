@@ -34,7 +34,8 @@ class GetResource:
         # !bangs - not python !java11 good test?
         # searches ddg pick top
         search_term = "!java11 " + (self.input_words.removesuffix('java'))
-        self.link = search(search_term, 1)
+        LOG.debug(search_term, "searchterm")
+        self.link = next(search(search_term, 1))
 
     def get_api(self):
         # search database
