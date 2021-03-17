@@ -11,7 +11,7 @@ Programming help using voice
 * "What is the linked list class"
 
 ## Credits
-Joe Corbett
+Joe
 
 ## Category
 **Information**
