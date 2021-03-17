@@ -18,7 +18,7 @@ class GetResource:
         # so cssselect .question summary a ?
 
         # easy option -->
-        self.link = "https://duckduckgo.com/?q=!stackoverflow" + self.input_words
+        self.link = "https://duckduckgo.com/?q=!stackoverflow " + self.input_words
 
     def get_ddg(self):
         # fallback
@@ -28,12 +28,12 @@ class GetResource:
         # !bangs - !wikipedia at start
         # gives direct document
         # even though link is search the term should give correct doc
-        self.link = "https://duckduckgo.com/?q=!wikipedia" + self.input_words
+        self.link = "https://duckduckgo.com/?q=!wikipedia " + self.input_words
 
     def get_docs(self):
         # !bangs - not python !java11 good test?
         # searches ddg pick top
-        search_term = "!java11" + (self.input_words.removesuffix('java'))
+        search_term = "!java11 " + (self.input_words.removesuffix('java'))
         self.link = search(search_term, 1)
 
     def get_api(self):
