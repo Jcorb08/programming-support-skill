@@ -39,7 +39,7 @@ class GetResource:
     def get_api(self):
         # search database
         # grab relevant doc
-        self.link = ""
+        self.link = " "
 
     # https://www.web-source.net/embedding_web_pages.htm
     # embed the resource in api webpage
