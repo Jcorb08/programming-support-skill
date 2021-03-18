@@ -35,12 +35,10 @@ class GetResource:
         # searches ddg pick top
         search_term = "!java11 " + (self.input_words.removesuffix('+java'))
         #LOG.debug(search_term, "searchterm")
-        try:
-            for s in search(search_term, 1):
-                LOG.debug(s, "search link")
-                self.link = s
-        except StopIteration:
-            pass
+        for s in search(search_term, 1):
+            LOG.debug(s, "search link")
+            self.link = s
+
 
     def get_api(self):
         # search database
