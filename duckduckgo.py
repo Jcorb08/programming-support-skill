@@ -15,9 +15,10 @@ def search(keywords, max_results=None):
     while True:
         res = requests.post(url, data=params)
         doc = html.fromstring(res.text)
+        LOG.debug("res", res.text)
 
         results = [a.get('href') for a in doc.cssselect('#links .links_main a')]
-        LOG.debug("results", results[0])
+        LOG.debug("results", len(results))
         for result in results:
             yield result
             time.sleep(0.1)
