@@ -6,7 +6,7 @@ from mycroft.util.log import LOG
 
 # https://github.com/thibauts/duckduckgo
 # prints out list of urls
-# edit to give descriptions too?
+# edited to add headers and now full understand code
 def search(keywords, max_results=None):
     url = 'https://html.duckduckgo.com/html/'
     params = {'q': keywords}
@@ -15,10 +15,8 @@ def search(keywords, max_results=None):
     while True:
         res = requests.post(url, data=params, headers=headers)
         doc = html.fromstring(res.text)
-        LOG.debug("res", res.text)
 
         results = [a.get('href') for a in doc.cssselect('#links .links_main a')]
-        LOG.debug("results", len(results))
         for result in results:
             yield result
             time.sleep(0.1)

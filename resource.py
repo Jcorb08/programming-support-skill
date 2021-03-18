@@ -42,8 +42,6 @@ class GetResource:
             LOG.debug("search link", s)
             self.link = s
 
-        LOG.debug("link", self.link)
-
 
     def get_api(self):
         # search database
