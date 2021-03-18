@@ -1,3 +1,6 @@
+import requests
+from lxml import html
+
 from .duckduckgo import search
 from mycroft.util.log import LOG
 
@@ -34,8 +37,7 @@ class GetResource:
         # !bangs - not python !java11 good test?
         # searches ddg pick top
         search_term = "!java11 " + (self.input_words.removesuffix('+java'))
-        gen = search('duckduckgo', max_results=2)
-        #LOG.debug("gen", next(gen))
+        gen = search(search_term, max_results=2)
         for s in gen:
             LOG.debug("search link", s)
             self.link = s

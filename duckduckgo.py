@@ -8,20 +8,15 @@ from mycroft.util.log import LOG
 # prints out list of urls
 # edit to give descriptions too?
 def search(keywords, max_results=None):
-    url = 'https://html.duckduckgo.com/html/'
+    url = 'https://duckduckgo.com/'
     params = {'q': keywords}
 
     yielded = 0
     while True:
         res = requests.post(url, data=params)
         doc = html.fromstring(res.text)
-        f = open("demofile2.txt", "a")
-        f.write(res.text)
-        f.close()
-        LOG.debug("html", res.text[0-10])
 
         results = [a.get('href') for a in doc.cssselect('#links .links_main a')]
-        LOG.debug("result", len(results))
         for result in results:
             yield result
             time.sleep(0.1)
