@@ -8,7 +8,7 @@ from mycroft.util.log import LOG
 # prints out list of urls
 # edit to give descriptions too?
 def search(keywords, max_results=None):
-    url = 'https://duckduckgo.com/'
+    url = 'https://duckduckgo.com/html/'
     params = {'q': keywords}
     headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0'}
     yielded = 0
