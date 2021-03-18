@@ -36,7 +36,8 @@ class GetResource:
         search_term = "!java11 " + (self.input_words.removesuffix('+java'))
         LOG.debug(search_term, "searchterm")
         try:
-            self.link = next(search(search_term, 1))
+            for s in search(search_term, 1):
+                self.link = s
         except StopIteration:
             pass
 
