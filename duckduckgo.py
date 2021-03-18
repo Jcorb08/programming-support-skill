@@ -1,6 +1,7 @@
 import requests
 from lxml import html
 import time
+from mycroft.util.log import LOG
 
 
 # https://github.com/thibauts/duckduckgo
@@ -19,6 +20,7 @@ def search(keywords, max_results=None):
         doc = html.fromstring(res.text)
 
         results = [a.get('href') for a in doc.cssselect('#links .links_main a')]
+        LOG.debug(results)
         for result in results:
             yield result
             time.sleep(0.1)
