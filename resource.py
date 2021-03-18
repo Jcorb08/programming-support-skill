@@ -42,11 +42,10 @@ class GetResource:
             LOG.debug("search link", s)
             self.link = s
 
-
     def get_api(self):
         # search database
         # grab relevant doc
-        self.link = " "
+        self.link = "https://programmingsupport.ml/?q=" + self.input_words
 
     # https://www.web-source.net/embedding_web_pages.htm
     # embed the resource in api webpage
