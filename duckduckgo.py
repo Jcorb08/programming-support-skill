@@ -15,6 +15,9 @@ def search(keywords, max_results=None):
     while True:
         res = requests.post(url, data=params)
         doc = html.fromstring(res.text)
+        f = open("demofile2.txt", "a")
+        f.write(res.text)
+        f.close()
         LOG.debug("html", res.text[0-10])
 
         results = [a.get('href') for a in doc.cssselect('#links .links_main a')]
