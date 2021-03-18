@@ -37,8 +37,9 @@ class GetResource:
         gen = search(search_term, max_results=1)
         LOG.debug("gen", gen)
         for s in gen:
+            LOG.debug("search link", s)
             self.link = s
-        LOG.debug("search link", s)
+
         LOG.debug("link", self.link)
 
 
