@@ -34,7 +34,9 @@ class GetResource:
         # !bangs - not python !java11 good test?
         # searches ddg pick top
         search_term = "!java11 " + (self.input_words.removesuffix('+java'))
-        for s in search(search_term, max_results=1):
+        gen = search(search_term, max_results=1)
+        LOG.debug("gen", gen)
+        for s in gen:
             self.link = s
         LOG.debug("search link", s)
         LOG.debug("link", self.link)
