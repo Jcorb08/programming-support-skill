@@ -20,7 +20,7 @@ def search(keywords, max_results=None):
         doc = html.fromstring(res.text)
 
         results = [a.get('href') for a in doc.cssselect('#links .links_main a')]
-        LOG.debug(results[0])
+        LOG.debug("result", results[0])
         for result in results:
             yield result
             time.sleep(0.1)
