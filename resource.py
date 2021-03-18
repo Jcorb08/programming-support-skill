@@ -35,7 +35,7 @@ class GetResource:
         # searches ddg pick top
         search_term = "!java11 " + (self.input_words.removesuffix('+java'))
         #LOG.debug(search_term, "searchterm")
-        for s in search(search_term, 1):
+        for s in search(search_term, max_results=1):
             LOG.debug(s, "search link")
             self.link = s
 
