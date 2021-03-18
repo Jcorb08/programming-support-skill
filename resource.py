@@ -37,6 +37,7 @@ class GetResource:
         LOG.debug(search_term, "searchterm")
         try:
             for s in search(search_term, 1):
+                LOG.debug(s, "search link")
                 self.link = s
         except StopIteration:
             pass
