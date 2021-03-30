@@ -584,9 +584,9 @@
 "you've",
 "z"],
   "resources": {
-    "stack": ["metaclass python"],
+    "stack": ["metaclass python","print an array java"],
     "wiki": ["python history","class diagram"],
-    "docs": ["number java","class java"],
-    "api": ["if statement java"]
+    "docs": ["number class java","class java"],
+    "api": ["if statement java","for loop in java"]
   }
 }
