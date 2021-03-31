@@ -37,6 +37,8 @@ class WorkoutAction:
         if best_choice > .5:
             for score in scores:
                 if score[1][1] == best_choice:
+                    if score[0] == "api":
+                        self.words = score[1][0]
                     return score[0]
         else:
             return "ddg"
