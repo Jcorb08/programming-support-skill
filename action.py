@@ -7,6 +7,7 @@ class WorkoutAction:
 
     resource = ""
     words = ""
+    scores = ""
 
     def __init__(self, utterance, word_dict):
         self.words = utterance
@@ -23,13 +24,13 @@ class WorkoutAction:
         return scores
 
     def determine_resource(self, word_dict):
-        scores = self.score_likelihood(word_dict)
-        LOG.debug(scores, "scores")
-        best_choice = max([score[1][1] for score in scores])
-        if best_choice > .5:
-            for score in scores:
+        self.scores = self.score_likelihood(word_dict)
+        LOG.debug(self.scores, "scores")
+        best_choice = max([score[1][1] for score in self.scores])
+        if best_choice > .45:
+            for score in self.scores:
                 if score[1][1] == best_choice:
-                    if score[0] == "api":
+                    if score[0] == "api" or score[0] == "wiki":
                         self.words = score[1][0]
                     return score[0]
         else:

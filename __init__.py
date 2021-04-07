@@ -48,6 +48,7 @@ class ProgrammingSupport(CommonQuerySkill):
                     # gets and outputs the resource to the user
                     LOG.debug(resource_.link, "link")
                     get_output(resource_.link)
+                    action_.scores
                     # EXACT = 1  # Skill could find a specific answer for the question
                     # CATEGORY = 2  # Skill could find an answer from a category in the query
                     # GENERAL = 3  # The query could be processed as a general quer
