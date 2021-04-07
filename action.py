@@ -12,14 +12,6 @@ class WorkoutAction:
         self.words = utterance
         self.select_most_likely(word_dict)
 
-    def get_keywords(self):
-        self.words = normalize(self.words)
-        # then get rid of pronouns verbs propositions ....
-
-        # NEEDED?
-        # not_keywords = word_dict["non_key"]
-        # self.words = [x for x in self.words if x != not_keywords]
-
     def score_likelihood(self, word_dict):
         resources = word_dict["resources"]
         # get from json
@@ -44,6 +36,6 @@ class WorkoutAction:
             return "ddg"
 
     def select_most_likely(self, word_dict):
-        self.get_keywords()
+        self.words = normalize(self.words)
         self.resource = self.determine_resource(word_dict)
         self.words = self.words.replace(' ', '+')
