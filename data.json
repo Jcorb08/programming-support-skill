@@ -584,9 +584,9 @@
 "you've",
 "z"],
   "resources": {
-    "stack": ["metaclass python","print an array java"],
-    "wiki": ["python history","class diagram"],
-    "docs": ["number class java","class java"],
-    "api": ["if statement java","for loop in java"]
+    "stack": ["Null Pointer Exception","compare strings in Java", "yield python"],
+    "wiki": ["recursion (computer science)","class diagram"],
+    "docs": ["String class java","Array List class java", "Object class Java"],
+    "api": ["if statement in java","for loop in java"]
   }
 }
