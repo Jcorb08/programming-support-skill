@@ -45,8 +45,8 @@ class GetResource:
     def get_api(self):
         # search database
         # grab relevant doc
-        # self.link = "https://programmingsupport.ml/?q=" + self.input_words
-        self.link = "http://localhost:8000/?q=" + self.input_words
+        self.link = "https://programmingsupport.ml/?q=" + self.input_words
+        # self.link = "http://localhost:8000/?q=" + self.input_words
 
     # https://www.web-source.net/embedding_web_pages.htm
     # embed the resource in api webpage
