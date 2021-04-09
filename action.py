@@ -25,7 +25,7 @@ class WorkoutAction:
 
     def determine_resource(self, word_dict):
         self.scores = self.score_likelihood(word_dict)
-        LOG.debug(self.scores, "scores")
+        #LOG.debug(self.scores, "scores")
         best_choice = max([score[1][1] for score in self.scores])
         if best_choice > .45:
             for score in self.scores:

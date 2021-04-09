@@ -49,7 +49,9 @@ class ProgrammingSupport(CommonQuerySkill):
                     LOG.debug(resource_.link, "link")
                     get_output(resource_.link)
                     self.speak('Support found, see your web browser')
+                    LOG.debug(action_.scores, "scores")
                     scores = action_.scores.sort(key=lambda n: action_.scores[1][1])
+                    LOG.debug(scores, "sorted scores")
                     self.speak('Similar utterances include:')
                     for score in scores:
                         self.speak(score[1][0] + 'of class' + score[0] + 'with a score of ' + score[1][1])
