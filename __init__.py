@@ -54,8 +54,9 @@ class ProgrammingSupport(CommonQuerySkill):
                     LOG.debug(action_.scores, "sorted scores")
                     self.speak('Similar utterances include:')
                     for score in action_.scores:
-                        self.speak(score[1][0] + ' of class ' + score[0] + ' with a score of ' +
-                                   str(round(score[1][1], 2)))
+                        if score[0] == action_.resource:
+                            self.speak(score[1][0] + ' of class ' + score[0] + ' with a score of ' +
+                                       str(round(score[1][1], 2)))
                     # action_.scores
                     # self.ask_selection()
                     # sort them and speak them out
