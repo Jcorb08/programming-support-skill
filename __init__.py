@@ -48,13 +48,20 @@ class ProgrammingSupport(CommonQuerySkill):
                     # gets and outputs the resource to the user
                     LOG.debug(resource_.link, "link")
                     get_output(resource_.link)
-                    #action_.scores
-                    #self.ask_selection()
+                    self.speak('Support found, see your web browser')
+                    scores = action_.scores.sort(key=lambda n: action_.scores[1][1])
+                    self.speak('Similar utterances include:')
+                    for score in scores:
+                        self.speak(score[1][0] + 'of class' + score[0] + 'with a score of ' + score[1][1])
+                    # action_.scores
+                    # self.ask_selection()
+                    # sort them and speak them out
+                    # allows them to repeat that statement instead i.e. restart skill
 
                     # EXACT = 1  # Skill could find a specific answer for the question
                     # CATEGORY = 2  # Skill could find an answer from a category in the query
                     # GENERAL = 3  # The query could be processed as a general quer
-                    return utt, CQSMatchLevel.EXACT, 'Support found, see your web browser'
+                    return utt, CQSMatchLevel.EXACT, 'Reutter the phrase if those answers are preferred'
         else:
             self.speak("Please Repeat that")
             return None
