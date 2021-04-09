@@ -50,7 +50,7 @@ class ProgrammingSupport(CommonQuerySkill):
                     get_output(resource_.link)
                     self.speak('Support found, see your web browser')
                     LOG.debug(action_.scores, "scores")
-                    scores = action_.scores.sort(key=lambda n: action_.scores[1][1])
+                    scores = action_.scores.sort(key=lambda n: n[1][1])
                     LOG.debug(scores, "sorted scores")
                     self.speak('Similar utterances include:')
                     for score in scores:
