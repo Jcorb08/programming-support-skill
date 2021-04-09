@@ -50,10 +50,10 @@ class ProgrammingSupport(CommonQuerySkill):
                     get_output(resource_.link)
                     self.speak('Support found, see your web browser')
                     LOG.debug(action_.scores, "scores")
-                    scores = action_.scores.sort(key=lambda n: n[1][1])
-                    LOG.debug(scores, "sorted scores")
+                    action_.scores.sort(key=lambda n: n[1][1])
+                    LOG.debug(action_.scores, "sorted scores")
                     self.speak('Similar utterances include:')
-                    for score in scores:
+                    for score in action_.scores:
                         self.speak(score[1][0] + 'of class' + score[0] + 'with a score of ' + score[1][1])
                     # action_.scores
                     # self.ask_selection()
