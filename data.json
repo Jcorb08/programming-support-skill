@@ -585,7 +585,7 @@
 "z"],
   "resources": {
     "stack": ["Null Pointer Exception","compare strings in Java", "yield python"],
-    "wiki": ["recursion (computer science)","class diagram","NP completeness"],
+    "wiki": ["recursion (computer science)","class diagram","NP completeness "],
     "docs": ["String class java","Array List class java", "Object class Java"],
     "api": ["if statement in java","for loop in java"]
   }
