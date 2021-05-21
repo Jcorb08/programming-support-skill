@@ -6,7 +6,7 @@ from mycroft.util.log import LOG
 
 # https://github.com/thibauts/duckduckgo
 # prints out list of urls
-# edited to add headers and now full understand code
+# edited to add headers and css selecting and now fully understand code
 def search(keywords, max_results=None):
     url = 'https://html.duckduckgo.com/html/'
     params = {'q': keywords}
